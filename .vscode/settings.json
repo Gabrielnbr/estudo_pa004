@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "comunidade-ds-postgres.c50pcakiuwi3.us-east-1.rds.amazonaws.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "comunidadedsdb",
+            "username": "member",
+            "password": "cdspa",
+            "name": "PA004"
+        }
+    ]
+}
