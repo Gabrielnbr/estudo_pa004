@@ -30,20 +30,20 @@ O time de negócio também tem algumas perguntas a mais para entender melhor com
 
 A tabela está disponível da seguinte forma:
 
-| Coluna | Descrição |
-| ------ | --------- |
-| Id | Identificador único do cliente. |
-| Gender | Gênero do cliente. |
-| Age | idade do cliente. |
-| Driving License | 0, o cliente não tem permissão para dirigir e 1, o cliente tem para dirigir ( CNH – Carteira Nacional de Habilitação )
-| Region Code | Código da região do cliente. |
-| Previously Insured | 0, o cliente não tem seguro de automóvel e 1, o cliente já tem seguro de automóvel. |
-| Vehicle Age | Idade do veículo. |
-| Vehicle Damage | 0, cliente nunca teve seu veículo danificado no passado e 1, cliente já teve seu veículo danificado no passado. |
-| Anual Premium | Quantidade que o cliente pagou à empresa pelo seguro de saúde anual. |
-| Policy sales channel | Código anônimo para o canal de contato com o cliente. |
-| Vintage | Número de dias que o cliente se associou à empresa através da compra do seguro de saúde. |
-| Response | 0, o cliente não tem interesse e 1, o cliente tem interesse. |
+| Coluna | Tradução | Descrição |
+| ------ | -------- | --------- |
+| Id | Id | Identificador único do cliente. |
+| Gender | genero | Gênero do cliente. |
+| Age | idade | idade do cliente. |
+| Driving License | cnh | 0, o cliente não tem permissão para dirigir e 1, o cliente tem para dirigir ( CNH – Carteira Nacional de Habilitação )
+| Region Code | codigo_regiao | Código da região do cliente. |
+| Previously Insured | seguro_previo_automovel | 0, o cliente não tem seguro de automóvel e 1, o cliente já tem seguro de automóvel. |
+| Vehicle Age | idade_veiculo | Idade do veículo. |
+| Vehicle Damage | veiculo_danificado | 0, cliente nunca teve seu veículo danificado no passado e 1, cliente já teve seu veículo danificado no passado. |
+| Anual Premium | premio_anual | Quantidade que o cliente pagou à empresa pelo seguro de saúde anual. |
+| Policy sales channel | contato_cliente | Código anônimo para o canal de contato com o cliente. |
+| Vintage | cliente_dias_contrato | Número de dias que o cliente se associou à empresa através da compra do seguro de saúde. |
+| Response | resposta | 0, o cliente não tem interesse e 1, o cliente tem interesse. |
 
 ## Acesso aos Dados
 
