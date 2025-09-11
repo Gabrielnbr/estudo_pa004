@@ -1,2 +1,83 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ambiente virtual
+.venv/
+venv/
+env/
+ENV/
+.ipynb_checkpoints
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs e debug
+*.log
+*.out
+*.err
+
+# Pacotes
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+
+# Configuração de IDEs/editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dados (não versionar dados brutos ou temporários)
+data/raw/
+data/interim/
+data/temp/
+*.csv
+*.tsv
+*.parquet
+*.json
+*.xls*
+*.hdf5
+
+# Modelos treinados e pesos
+models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# Notebooks
+.ipynb_checkpoints
+*.nbconvert.ipynb
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.bak
+
+# Resultados de análises e relatórios gerados
+reports/
+*.html
+*.pdf
+
+# Arquivos de configuração locais
+*.env
+.env/
+
+
 data/raw/db_keys.json
-PA004
+pa004
