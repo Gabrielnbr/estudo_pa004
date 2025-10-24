@@ -8,15 +8,16 @@ from matplotlib import pyplot as plt
 from IPython.core.display import HTML
 
 
-def supressao_notacao():
+def supressao_notacao(casa_decimal = 2):
+    formato_float = f'{{:.{casa_decimal}f}}'
     # Supressão de Notação Científica
     np.set_printoptions(suppress=True)
-    pd.set_option('display.float_format', '{:.3f}'.format)
+    pd.set_option('display.float_format', formato_float.format)
 
 def jupyter_settings(
-                    altura: int,
-                    largura: int,
-                    fonte: int):
+                    altura: int = 12,
+                    largura: int = 8,
+                    fonte: int = 8):
     #%matplotlib inline
 
     plt.style.use( 'bmh' )
