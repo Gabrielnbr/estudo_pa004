@@ -14,7 +14,7 @@ DICTNORMALIZE = {
     'premio_anual': _norm_premio_anual
 }
 
-def normalizacao(df):
+def _normalizacao(df):
     for col, fn in DICTNORMALIZE.items():
         if col in df.columns:
             df = fn(df)
@@ -59,7 +59,7 @@ DICTRESCALE = {
     'meses_contrato': _reescala_meses_contrato
 }
 
-def reescala(df):
+def _reescala(df):
     for col, fn in DICTRESCALE.items():
         if col in df.columns:
             df = fn(df)
@@ -97,7 +97,7 @@ DICTENCODER = {
     'contato_cliente': _enc_contato_cliente
 }
 
-def encoder(df):
+def _encoder(df):
     for col, fn in DICTENCODER.items():
         if col in df.columns:
             df = fn(df)
@@ -110,7 +110,7 @@ def encoder(df):
 #============================
 
 def data_prep(df):
-    df = normalizacao(df)
-    df = reescala(df)
-    df = encoder(df)
+    df = _normalizacao(df)
+    df = _reescala(df)
+    df = _encoder(df)
     return df
