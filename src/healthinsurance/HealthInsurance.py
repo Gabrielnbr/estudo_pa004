@@ -11,15 +11,15 @@ logging.basicConfig(
 class HealthInsurance:
     def __init__(self):
         
-        self.home_path =                   "E:/3_recursos/2_area/profissional/cursos/22_06.1 - PA004/src/features/"
-        self.premio_anual_mms =            self.home_path+"mms_pa.pkl"
-        self.idade =                       self.home_path+"mms_idade.pkl"
-        self.clientes_dia_contrato_mms =   self.home_path+"mms_cdc.pkl"
-        self.semanas_contrato_mms =        self.home_path+"mms_sc.pkl"
-        self.meses_contrato_mms =          self.home_path+"mms_mc.pkl"
-        self.genero_te =                   self.home_path+"target_encode_genero.pkl"
-        self.codigo_regisao_te =           self.home_path+"target_encode_codigo_regiao.pkl"
-        self.contato_cliente_fe =          self.home_path+"fe_contato_cliente.pkl"
+        self.home_path =                   ""#"E:/3_recursos/2_area/profissional/cursos/22_06.1 - PA004/src/features/"
+        self.premio_anual_mms =            self.home_path+"src/features/mms_pa.pkl"
+        self.idade =                       self.home_path+"src/features/mms_idade.pkl"
+        self.clientes_dia_contrato_mms =   self.home_path+"src/features/mms_cdc.pkl"
+        self.semanas_contrato_mms =        self.home_path+"src/features/mms_sc.pkl"
+        self.meses_contrato_mms =          self.home_path+"src/features/mms_mc.pkl"
+        self.genero_te =                   self.home_path+"src/features/target_encode_genero.pkl"
+        self.codigo_regisao_te =           self.home_path+"src/features/target_encode_codigo_regiao.pkl"
+        self.contato_cliente_fe =          self.home_path+"src/features/fe_contato_cliente.pkl"
         
     def data_cleaning(self,  df: pd.DataFrame ) -> pd.DataFrame:
         try:

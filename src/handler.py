@@ -1,12 +1,11 @@
 import pickle
 import pandas as pd
 from flask import Flask, request, Response
-from deploy_test import HealthInsurance
+from healthinsurance.HealthInsurance import HealthInsurance
 import logging
 
 # loading model
-# path = '/Users/meigarom.lopes/repos/pa004_health_insurance_cross_sell/health_insurance_cross-sell/'
-model = pickle.load( open('E:/3_recursos/2_area/profissional/cursos/22_06.1 - PA004/src/models/lr_model.pkl', 'rb' ) )
+model = pickle.load( open('src/models/lr_model.pkl', 'rb' ) )
 
 log = logging.getLogger(__name__)
 
@@ -27,8 +26,7 @@ def health_insurance_predict():
                 
             # Instantiate  class
             pipeline = HealthInsurance()
-            a = type(test_raw)
-            log.info(f"{a}")
+            
             # data cleaning
             df1 = pipeline.data_cleaning( test_raw )
             
