@@ -1,3 +1,4 @@
+import os
 import pickle
 import pandas as pd
 from flask import Flask, request, Response
@@ -5,7 +6,7 @@ from healthinsurance.HealthInsurance import HealthInsurance
 import logging
 
 # loading model
-model = pickle.load( open('src/models/lr_model.pkl', 'rb' ) )
+model = pickle.load( open('models/lr_model.pkl', 'rb' ) )
 
 log = logging.getLogger(__name__)
 
@@ -44,7 +45,9 @@ def health_insurance_predict():
         else:
             return Response( '{}', status=200, mimetype='application/json' )
     except Exception as e:
-        log.exception("{e}")
+        log.exception("Erro no /predict")
+        return Response('{"error":"internal error"}', status=500, mimetype="application/json")
 
 if __name__ == '__main__':
-    app.run( '0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=False)

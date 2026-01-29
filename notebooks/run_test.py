@@ -7,7 +7,7 @@ df_test = pkl.load(open("data/processed/x_validacao.pkl", 'rb'))
 df_test = df_test.sample(10)
 df = json.dumps(df_test.to_dict(orient = 'records'))
 
-url = "http://192.168.100.28:5000/predict"
+url = "https://estudo-pa004.onrender.com/predict"
 header = {'Content-type': 'application/json'}
 
 r = requests.post(url, data = df, headers = header)
