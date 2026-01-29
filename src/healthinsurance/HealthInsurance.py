@@ -231,9 +231,9 @@ class HealthInsurance:
         return df
     
     def get_prediction(self, model, original_data, test_data):
+        
         pred = model.predict_proba(test_data)[:,1]
         
         original_data['prediction'] = pred
-        data_return = original_data[['id','prediction']]
         
-        return data_return.to_json( orient = "records", date_format="iso")
+        return original_data.to_json( orient = "records", date_format="iso")
