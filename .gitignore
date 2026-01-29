@@ -53,8 +53,8 @@ data/temp/
 *.hdf5
 
 # Modelos treinados e pesos
-models/
-*.pkl
+#models/
+#*.pkl
 *.joblib
 *.h5
 *.pt
