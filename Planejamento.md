@@ -71,5 +71,5 @@ As ferramentas serão:
 2. Linguagem de programação:
    1. Python para análise de dados e desenvolvimento dos algorítimos de Machine Learnning.
    2. SQL para acesso as informações dos bancos de dados.
-3. Produção: Heroku.
+3. Produção: Render.
 4. Versionamento: Git e GitHub.
