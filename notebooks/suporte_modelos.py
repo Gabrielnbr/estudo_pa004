@@ -24,7 +24,6 @@ def _required(data: pd.DataFrame) -> pd.DataFrame:
     required = {"score", "resposta"}
     if not required.issubset(data.columns):
         raise ValueError(f"DataFrame precisa conter as colunas: {required}")
-
     return data.loc[:, ["score", "resposta"]].copy()
 
 

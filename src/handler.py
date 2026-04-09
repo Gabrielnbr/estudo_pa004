@@ -6,7 +6,7 @@ from healthinsurance.HealthInsurance import HealthInsurance
 import logging
 
 # loading model
-model = pickle.load( open('models/lr_model.pkl', 'rb' ) )
+model = pickle.load( open('models/model_xgb_tunned_hd.pkl', 'rb' ) )
 
 log = logging.getLogger(__name__)
 
