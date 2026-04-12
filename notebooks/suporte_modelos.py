@@ -222,3 +222,24 @@ def tamanho_modelo(lista_modelos: list[Any]) -> pd.DataFrame:
 
     return pd.DataFrame(lista_temp)
 
+def tabela_lift(y_true, y_score, bins=20):
+    df_lift = pd.DataFrame({
+        "target": y_true,
+        "score": y_score,
+    }).sort_values("score", ascending=False).reset_index(drop=True)
+
+    df_lift["faixa"] = pd.qcut(df_lift.index, bins, labels=False)
+    taxa_global = df_lift["target"].mean()
+
+    tabela = df_lift.groupby("faixa").agg(
+        clientes=("target", "count"),
+        interessados=("target", "sum"),
+    )
+
+    tabela["precision_faixa"] = tabela["interessados"] / tabela["clientes"]
+    tabela["lift"] = tabela["precision_faixa"] / taxa_global
+    tabela["clientes_acumulados"] = tabela["clientes"].cumsum()
+    tabela["interessados_acumulados"] = tabela["interessados"].cumsum()
+    tabela["recall_acumulado"] = tabela["interessados_acumulados"] / tabela["interessados"].sum()
+
+    return tabela.reset_index()
