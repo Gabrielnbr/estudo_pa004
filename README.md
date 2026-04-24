@@ -262,7 +262,7 @@ No Top 40% da base, o XGBClassifier apresentou lift de 1,44. Isso significa que,
 
 No primeiro decil da validação, o XGBClassifier concentrou 2.280 clientes interessados em 5.717 contatos, com precision de 39,88%.
 
-![LINK CURVA LIFT](reports\figures\xbg_lift_curve.png)
+![LINK CURVA LIFT](https://github.com/Gabrielnbr/Insurrance-Cross-Sell/blob/main/reports/figures/xbg_lift_curve.png)
 
 ## 7.3 Threshold Operacional
 
@@ -284,8 +284,7 @@ O threshold de 0,45 foi selecionado como ponto de equilíbrio entre precision e 
 
 Para uso direto da campanha, a recomendação principal continua sendo ordenação por score e seleção de Top k conforme capacidade operacional.
 
-![LINK THRESHOLD](reports\figures\thrashold.png)
-
+![LINK THRESHOLD](https://github.com/Gabrielnbr/Insurrance-Cross-Sell/blob/main/reports/figures/thrashold.png)
 ## 7.3 Resultado para 20.000 Ligações
 
 Com 20.000 ligações, o modelo prioriza aproximadamente 34,99% da base de validação e captura 6.168 clientes interessados.
@@ -301,7 +300,7 @@ Com 20.000 ligações, o modelo prioriza aproximadamente 34,99% da base de valid
 
 Até o volume de 20.000 contatos, o modelo ainda apresenta lift de aproximadamente 1,6 vezes em relação à escolha aleatória.
 
-![LINK RESULTADO 20K](reports\figures\resultado_20k.png)
+![LINK RESULTADO 20K](https://github.com/Gabrielnbr/Insurrance-Cross-Sell/blob/main/reports/figures/resultado_20k.png)
 
 ## 7.4 Tradução Financeira
 
