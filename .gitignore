@@ -70,7 +70,6 @@ data/temp/
 *.bak
 
 # Resultados de análises e relatórios gerados
-reports/
 *.html
 *.pdf
 
