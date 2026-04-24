@@ -1,3 +1,5 @@
+![Cover](reports\figures\cover-insurance-cross-sell-clean-subtitle.png)
+
 # 0.0 Orientações
 
 Este é um projeto de Machine Learning Supervisionado de Classificação, especificamente Learn-to-Rank. Seu objetivo é ordenar um conjunto de clientes com tendência a consumir um tipo de serviço, a fim de maximizar o tempo e os recursos para vender a mais clientes.
