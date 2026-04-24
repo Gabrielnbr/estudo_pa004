@@ -1,4 +1,6 @@
-![Cover](reports\figures\cover-insurance-cross-sell-clean-subtitle.png)
+# Insurance Cross-Sell
+
+![Cover](https://github.com/Gabrielnbr/Insurrance-Cross-Sell/blob/main/reports/figures/cover-insurance-cross-sell-clean-subtitle.png)
 
 # 0.0 Orientações
 
