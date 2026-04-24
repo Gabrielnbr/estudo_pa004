@@ -1,20 +1,19 @@
 # 0.0 Orientações
 
-Este é um projeto de Machine Learning Supervisionado de Classificação, especificamente Learn-to-Rank. Seu objetivo é ordenar um conjunto de clientes com tendencia à consumir um tipo de serviço, afim maximizar o tempo e os recursos para vender a mais clientes.
+Este é um projeto de Machine Learning Supervisionado de Classificação, especificamente Learn-to-Rank. Seu objetivo é ordenar um conjunto de clientes com tendência a consumir um tipo de serviço, a fim de maximizar o tempo e os recursos para vender a mais clientes.
 
-O projeto utiliza dados de seguro de saúde para auxiliar na venda de seguros automotivos. Em vez de classificar o interesse, o modelo ordena os clientes por probabilidade de conversão permitindo o time de vendas se concentre em contatos mais promissores.
+O projeto utiliza dados de seguro de saúde para auxiliar na venda de seguros automotivos. Em vez de classificar o interesse, o modelo ordena os clientes por probabilidade de conversão permitindo que o time de vendas se concentre em contatos mais promissores.
 
 Links para este projeto:
-- API: O modelo está disponível na nuvem do Render por meio do [[LINK](https://estudo-pa004.onrender.com/predict)]
+- API: O modelo está disponível na nuvem do Render por meio do `https://estudo-pa004.onrender.com/predict`
 - Base e Dados: A base de dados não se encontra mais disponível online, deixei na pasta dados/data e dados/raw
-- Aplicação WEB: Este projeto encontra-se no google sheets[LINK] e no Looker Stúdio[LINK]
-- Artigo do projeto: Relato minha experiência ao montar este projeto, disponível no Medium [LINK]
+- Aplicação WEB: Este projeto encontra-se no google sheets [[LINK]](https://docs.google.com/spreadsheets/d/1fT8jgWiZAWIL3uFHkqCe5A0ioZvgG4f__XKRMrQOQNU/edit?gid=909962563#gid=909962563) e no Looker Stúdio [[LINK]](https://datastudio.google.com/reporting/bf08327e-d1da-4d19-a61c-192d631e738f)
 
 # 1.0 Problema de Negócio
 
 A Insurrance ALL é uma empresa do mercado de saúde que fornece seguros de saúde. Com o crescimento da empresa, ela está estudando ampliar ao mercado de seguros automotivos.
 
-Afim de avaliar o potencial do seu produto, a empresa realizou uma pesquisa com aproximadamente a 380 mil clientes, mas 127 mil não responderam.
+A fim de avaliar o potencial do seu produto, a empresa realizou uma pesquisa com aproximadamente 380 mil clientes, mas 127 mil não responderam.
 
 Desta forma o time de negócio pensou em fazer uma campanha ativa para entrar em contato com os clientes, mas essa campanha está limitada a 20.000 ligações.
 
@@ -27,11 +26,11 @@ Para este projeto foram considerada as seguintes premissas:
 1. O time de venda possui capacidade operacional limitada a 20.000 ligações.
 2. O custo de cada ligação é 2,50.
 3. A operação realiza 2.000 ligações por dia.
-4. A receita média estimada por cliente convertido doi estimada em R$ 2.000,00.
+4. A receita média estimada por cliente convertido foi estimada em R$ 2.000,00.
 
 ## 2.1 Perguntas de Negócio
 
-Pra complementar o estudo o time de negócio fez 3 perguntas a serem respondidas:
+Para complementar o estudo, o time de negócio fez 3 perguntas a serem respondidas:
 
 1. Quais são os principais insights sobre os atributos mais relevantes de clientes interessados em adquirir seguro automotivo?
 2. Qual porcentagem de clientes interessados o time de vendas conseguirá contatar fazendo 20.000 ligações?
@@ -59,11 +58,11 @@ A tabela está disponível da seguinte forma:
 
 ## 2.3 Acesso aos Dados
 
-Os dados não estão mais disponíveis para consulta, mas foram extraídos de uma banco PostgreSQL disponibilizado na AWS.
+Os dados não estão mais disponíveis para consulta, mas foram extraídos de um banco PostgreSQL disponibilizado na AWS.
 
 # 3.0 Estratégia da Solução
 
-Para o desenvolvimento da solução foi optado pela metodologia CRISP-DM, permitindo iterar sobre vários ciclos afim de alcançar um melhor entendimento do problema, buscar otimizar o modelo e seus resultados.
+Para o desenvolvimento da solução foi adotada a metodologia CRISP-DM, permitindo iterar sobre vários ciclos a fim de alcançar um melhor entendimento do problema, buscar otimizar o modelo e seus resultados.
 
 ## 3.1 Metodologia
 
@@ -236,7 +235,7 @@ Parâmetros selecionados para o XGBClassifier:
 
 # 7.0 Resultado de Negócio 
 
-## 7.1 Performance do Modelo FinaL
+## 7.1 Performance do Modelo Final
 
 Na validação holdout, o XGBClassifier apresentou:
 
@@ -250,7 +249,7 @@ Na validação cruzada, o modelo apresentou:
 | -- | -- | -- | -- | -- |
 | XGBClassifier | 0,26250 | 0,000374 | 0,96707 | 0,001367 |
 
-Sendo em comparação aos outros modelos, o resultado mais adequado ao problema.
+Em comparação aos outros modelos, foi o resultado mais adequado ao problema.
 
 ## 7.2 Curva Lift
 
@@ -263,7 +262,7 @@ No Top 40% da base, o XGBClassifier apresentou lift de 1,44. Isso significa que,
 
 No primeiro decil da validação, o XGBClassifier concentrou 2.280 clientes interessados em 5.717 contatos, com precision de 39,88%.
 
-[LINK CURVA LIFT]
+![LINK CURVA LIFT](reports\figures\xbg_lift_curve.png)
 
 ## 7.3 Threshold Operacional
 
@@ -271,7 +270,7 @@ Antes da tradução financeira, foi avaliado o uso de threshold para transformar
 
 O threshold de 0,45 foi selecionado como ponto de equilíbrio entre precision e recall. Nesse corte, o modelo preserva 74,5% dos positivos reais e exige aproximadamente 3 contatos para encontrar 1 cliente interessado.
 
-| M?trica | Valor |
+| Métrica | Valor |
 | -- | -- |
 | Threshold | 0,45 |
 | Total previsto para contato | 15.878 |
@@ -285,7 +284,7 @@ O threshold de 0,45 foi selecionado como ponto de equilíbrio entre precision e 
 
 Para uso direto da campanha, a recomendação principal continua sendo ordenação por score e seleção de Top k conforme capacidade operacional.
 
-[LINK THRESHOLD]
+![LINK THRESHOLD](reports\figures\thrashold.png)
 
 ## 7.3 Resultado para 20.000 Ligações
 
@@ -302,7 +301,7 @@ Com 20.000 ligações, o modelo prioriza aproximadamente 34,99% da base de valid
 
 Até o volume de 20.000 contatos, o modelo ainda apresenta lift de aproximadamente 1,6 vezes em relação à escolha aleatória.
 
-[LINK RESULTADO 20K]
+![LINK RESULTADO 20K](reports\figures\resultado_20k.png)
 
 ## 7.4 Tradução Financeira
 
@@ -370,13 +369,9 @@ Os principais pontos de melhoria são:
 
 Os principais aprendizados deste projeto foram:
 
-1. Problemas de negócio com capacidade limitada de contato devem ser tratados como priorização e rankeamento, não apenas classificação.
-2. Recall@k e Precision@k são métricas mais úteis para campanhas comerciais do que acurácia.
-3. A tradução da performance técnica em impacto financeiro facilita a comunicação com áreas de negócio.
-4. Modelos com performance parecida devem ser comparados também por tamanho, custo de deploy e simplicidade operacional.
-5. A etapa de deploy exige que o pipeline de treino seja reproduzido com cuidado em produção, incluindo limpeza, feature engineering, reescala e encoding.
-
-[INSERIR LINK DO ARTIGO COM A EXPERIÊNCIA DO PROJETO, CASO SEJA PUBLICADO]
+1. A principal foi isolar as funções e criar um pipeline próprio. Apesar de saber que existem funções no pandas e sklearn para construção de pipelines, optei por construir o meu na mão para todas as partes do código.
+2. Algo que já faço com frequência e gosto muito é separar os notebooks dos projetos, tanto para otimizar o trabalho com o CRISP-DM, quanto para economizar recursos da minha máquina (que não é tão potente).
+3. Nem todo problema de negócio utilizará as métricas padrões. Apesar dos modelos serem "padrões", os problemas diferenciam-se e suas métricas também. Neste caso, tive que modificar a métrica para uma que se adaptaria ao modelo.
 
 # 12.0 Contatos
 
